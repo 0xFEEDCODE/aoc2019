@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net8.0</TargetFramework>
+        <UserSecretsId>90266471-51b7-40c7-8259-79a44c5753b8</UserSecretsId>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Compile Include="helper.fs" />
+        <Compile Include="day01\day1.fs" />
+        <Compile Include="day02\day2.fs" />
+        <Compile Include="day20\day20.fs" />
+        <Compile Include="Program.fs" />
+        <Content Include="test.txt" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="9.0.0" />
+    </ItemGroup>
+
+</Project>
