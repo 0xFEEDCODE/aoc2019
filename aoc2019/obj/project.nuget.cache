@@ -1,22 +1,22 @@
 {
   "version": 2,
-  "dgSpecHash": "yFTtdSRGwgb3P/tuLH3S3qMKuSIeO0yLCbxx0hZO5CfnHcQ4z/wzYchsP6Y3rKbwG/BF4fuAAKYDYvKypApokg==",
+  "dgSpecHash": "XQf7jLBKFP2QDtoSKFEsZjHfEeuWEoaY6L7qq9RaWNb/vvPEJZS5gOEUybblLX/NAKZTEAD+y850ZPsrg/3hIg==",
   "success": true,
-  "projectFilePath": "/Users/universeissoup/RiderProjects/aoc2019/aoc2019/aoc2019.fsproj",
+  "projectFilePath": "Z:\\repos\\aoc2019\\aoc2019\\aoc2019.fsproj",
   "expectedPackageFiles": [
-    "/Users/universeissoup/.nuget/packages/fsharp.core/8.0.301/fsharp.core.8.0.301.nupkg.sha512",
-    "/Users/universeissoup/.nuget/packages/microsoft.extensions.configuration/9.0.0/microsoft.extensions.configuration.9.0.0.nupkg.sha512",
-    "/Users/universeissoup/.nuget/packages/microsoft.extensions.configuration.abstractions/9.0.0/microsoft.extensions.configuration.abstractions.9.0.0.nupkg.sha512",
-    "/Users/universeissoup/.nuget/packages/microsoft.extensions.configuration.fileextensions/9.0.0/microsoft.extensions.configuration.fileextensions.9.0.0.nupkg.sha512",
-    "/Users/universeissoup/.nuget/packages/microsoft.extensions.configuration.json/9.0.0/microsoft.extensions.configuration.json.9.0.0.nupkg.sha512",
-    "/Users/universeissoup/.nuget/packages/microsoft.extensions.configuration.usersecrets/9.0.0/microsoft.extensions.configuration.usersecrets.9.0.0.nupkg.sha512",
-    "/Users/universeissoup/.nuget/packages/microsoft.extensions.fileproviders.abstractions/9.0.0/microsoft.extensions.fileproviders.abstractions.9.0.0.nupkg.sha512",
-    "/Users/universeissoup/.nuget/packages/microsoft.extensions.fileproviders.physical/9.0.0/microsoft.extensions.fileproviders.physical.9.0.0.nupkg.sha512",
-    "/Users/universeissoup/.nuget/packages/microsoft.extensions.filesystemglobbing/9.0.0/microsoft.extensions.filesystemglobbing.9.0.0.nupkg.sha512",
-    "/Users/universeissoup/.nuget/packages/microsoft.extensions.primitives/9.0.0/microsoft.extensions.primitives.9.0.0.nupkg.sha512",
-    "/Users/universeissoup/.nuget/packages/system.io.pipelines/9.0.0/system.io.pipelines.9.0.0.nupkg.sha512",
-    "/Users/universeissoup/.nuget/packages/system.text.encodings.web/9.0.0/system.text.encodings.web.9.0.0.nupkg.sha512",
-    "/Users/universeissoup/.nuget/packages/system.text.json/9.0.0/system.text.json.9.0.0.nupkg.sha512"
+    "C:\\Users\\synca\\.nuget\\packages\\fsharp.core\\8.0.300\\fsharp.core.8.0.300.nupkg.sha512",
+    "C:\\Users\\synca\\.nuget\\packages\\microsoft.extensions.configuration\\9.0.0\\microsoft.extensions.configuration.9.0.0.nupkg.sha512",
+    "C:\\Users\\synca\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\9.0.0\\microsoft.extensions.configuration.abstractions.9.0.0.nupkg.sha512",
+    "C:\\Users\\synca\\.nuget\\packages\\microsoft.extensions.configuration.fileextensions\\9.0.0\\microsoft.extensions.configuration.fileextensions.9.0.0.nupkg.sha512",
+    "C:\\Users\\synca\\.nuget\\packages\\microsoft.extensions.configuration.json\\9.0.0\\microsoft.extensions.configuration.json.9.0.0.nupkg.sha512",
+    "C:\\Users\\synca\\.nuget\\packages\\microsoft.extensions.configuration.usersecrets\\9.0.0\\microsoft.extensions.configuration.usersecrets.9.0.0.nupkg.sha512",
+    "C:\\Users\\synca\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\9.0.0\\microsoft.extensions.fileproviders.abstractions.9.0.0.nupkg.sha512",
+    "C:\\Users\\synca\\.nuget\\packages\\microsoft.extensions.fileproviders.physical\\9.0.0\\microsoft.extensions.fileproviders.physical.9.0.0.nupkg.sha512",
+    "C:\\Users\\synca\\.nuget\\packages\\microsoft.extensions.filesystemglobbing\\9.0.0\\microsoft.extensions.filesystemglobbing.9.0.0.nupkg.sha512",
+    "C:\\Users\\synca\\.nuget\\packages\\microsoft.extensions.primitives\\9.0.0\\microsoft.extensions.primitives.9.0.0.nupkg.sha512",
+    "C:\\Users\\synca\\.nuget\\packages\\system.io.pipelines\\9.0.0\\system.io.pipelines.9.0.0.nupkg.sha512",
+    "C:\\Users\\synca\\.nuget\\packages\\system.text.encodings.web\\9.0.0\\system.text.encodings.web.9.0.0.nupkg.sha512",
+    "C:\\Users\\synca\\.nuget\\packages\\system.text.json\\9.0.0\\system.text.json.9.0.0.nupkg.sha512"
   ],
   "logs": []
 }

@@ -2,19 +2,22 @@
 module aoc2019.day01
 open helper
 
+let rec fn x acc =
+    if (x <= 0) then
+        acc
+    else
+        fn ((x / 3)-2) (acc+x)
+
 let solve() =
-    let inp = helper.getInput()
+    let inp = helper.getInput(false)
     
     let ans1 = inp |> Seq.sumBy(fun n -> ((int n) / 3)-2)
     printfn "%A" ans1
     
     //helper.submitAnswer 1 ans1
-    
-    let mutable fuel = inp |> Seq.map(fun n -> ((int n) /3)-2, 0)
-    while(not (fuel |> Seq.forall(fun x -> fst x <= 0))) do
-        fuel <- fuel |> Seq.map(fun (f,s) -> (f/3)-2, if f > 0 then s + f else s)
+    let ans2 = inp |> Seq.sumBy(fun x -> (fn (int x) 0) - int x)
         
-    printfn "%A" (fuel |> Seq.sumBy(snd))
-    //helper.submitAnswer 2 (fuel |> Seq.sumBy(snd))
+    printfn "%A" (ans2)
+    helper.submitAnswer 2 ans2
     0
 

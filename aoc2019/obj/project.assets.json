@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     "net8.0": {
-      "FSharp.Core/8.0.301": {
+      "FSharp.Core/8.0.300": {
         "type": "package",
         "compile": {
           "lib/netstandard2.1/FSharp.Core.dll": {
@@ -297,15 +297,15 @@
     }
   },
   "libraries": {
-    "FSharp.Core/8.0.301": {
-      "sha512": "I94+2zfAhWMJwPzVDFSlsutZvjPkaRvLVipf8b2O4AyzxKUBmevDkUBzcJBqSQNB1Ikig8xdphswoeKrObqx7Q==",
+    "FSharp.Core/8.0.300": {
+      "sha512": "Jv44fV7TNglyMku89lQcA4Q6mFKLyHb2bs1Yb72nvSVc+cHplEnoZ4XQUaaTLJGUTx/iMqcrkYGtaLzkkIhpaA==",
       "type": "package",
-      "path": "fsharp.core/8.0.301",
+      "path": "fsharp.core/8.0.300",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
-        "fsharp.core.8.0.301.nupkg.sha512",
+        "fsharp.core.8.0.300.nupkg.sha512",
         "fsharp.core.nuspec",
         "lib/netstandard2.0/FSharp.Core.dll",
         "lib/netstandard2.0/FSharp.Core.xml",
@@ -731,31 +731,32 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "FSharp.Core >= 8.0.301",
+      "FSharp.Core >= 8.0.300",
       "Microsoft.Extensions.Configuration.UserSecrets >= 9.0.0"
     ]
   },
   "packageFolders": {
-    "/Users/universeissoup/.nuget/packages/": {}
+    "C:\\Users\\synca\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/universeissoup/RiderProjects/aoc2019/aoc2019/aoc2019.fsproj",
+      "projectUniqueName": "Z:\\repos\\aoc2019\\aoc2019\\aoc2019.fsproj",
       "projectName": "aoc2019",
-      "projectPath": "/Users/universeissoup/RiderProjects/aoc2019/aoc2019/aoc2019.fsproj",
-      "packagesPath": "/Users/universeissoup/.nuget/packages/",
-      "outputPath": "/Users/universeissoup/RiderProjects/aoc2019/aoc2019/obj/",
+      "projectPath": "Z:\\repos\\aoc2019\\aoc2019\\aoc2019.fsproj",
+      "packagesPath": "C:\\Users\\synca\\.nuget\\packages\\",
+      "outputPath": "Z:\\repos\\aoc2019\\aoc2019\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/universeissoup/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\synca\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "/usr/local/share/dotnet/library-packs": {},
-        "/usr/local/share/dotnet/sdk/8.0.303/FSharp/library-packs": {},
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\sdk\\8.0.302\\FSharp\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -772,7 +773,7 @@
           "FSharp.Core": {
             "include": "Runtime, Compile, Build, Native, Analyzers, BuildTransitive",
             "target": "Package",
-            "version": "[8.0.301, )",
+            "version": "[8.0.300, )",
             "generatePathProperty": true
           },
           "Microsoft.Extensions.Configuration.UserSecrets": {
@@ -797,7 +798,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.303/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
