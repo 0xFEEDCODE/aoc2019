@@ -14,7 +14,7 @@ day01.solve()
 day02.solve()
 day20.solve()
 *)
-day02.solve()
+day01.solve()
 sw.Stop()
 
 

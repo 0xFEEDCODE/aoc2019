@@ -11,7 +11,7 @@ open System.Reflection
 [<assembly: System.Reflection.AssemblyCompanyAttribute("aoc2019")>]
 [<assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")>]
 [<assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")>]
-[<assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a8a041af859d0ff353d523d2b0b2926a9f495334")>]
+[<assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7c3dd43a3b8dbfcf8a9ebc995926d3ba2bab1528")>]
 [<assembly: System.Reflection.AssemblyProductAttribute("aoc2019")>]
 [<assembly: System.Reflection.AssemblyTitleAttribute("aoc2019")>]
 [<assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")>]
