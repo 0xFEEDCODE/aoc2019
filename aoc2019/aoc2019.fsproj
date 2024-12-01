@@ -8,8 +8,8 @@
 
     <ItemGroup>
         <Compile Include="util.fs" />
-        <Compile Include="day1.fs" />
-        <Compile Include="day2.fs" />
+        <Compile Include="day01.fs" />
+        <Compile Include="day02.fs" />
         <Compile Include="day12.fs" />
         <Compile Include="Program.fs" />
         <Content Include="day01.txt"/>
