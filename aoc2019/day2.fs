@@ -1,10 +1,10 @@
 module aoc2019.day02
 
 open Microsoft.FSharp.Collections
-open helper
+open aoc2019.util
 
 let solve() =
-    let mutable inp = (helper.getInput() |> Seq.head).Split ',' |> Seq.map int |> Seq.toArray
+    let mutable inp = (aocIO.getInput() |> Seq.head).Split ',' |> Seq.map int |> Seq.toArray
     
     inp[1] <- 12;
     inp[2] <- 2
@@ -19,6 +19,7 @@ let solve() =
     
     printfn $"%A{inp}"
     let ans1 = inp[0]
-    printfn "%A" ans1
+    
+    printfn $"%A{ans1}"
     //helper.submitAnswer 1 ans1
     

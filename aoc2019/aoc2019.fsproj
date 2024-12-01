@@ -7,12 +7,35 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Compile Include="helper.fs" />
-        <Compile Include="day01\day1.fs" />
-        <Compile Include="day02\day2.fs" />
-        <Compile Include="day20\day20.fs" />
+        <Compile Include="util.fs" />
+        <Compile Include="day1.fs" />
+        <Compile Include="day2.fs" />
+        <Compile Include="day12.fs" />
         <Compile Include="Program.fs" />
-        <Content Include="test.txt" />
+        <Content Include="day01.txt"/>
+        <Content Include="day02.txt"/>
+        <Content Include="day03.txt"/>
+        <Content Include="day04.txt"/>
+        <Content Include="day05.txt"/>
+        <Content Include="day06.txt"/>
+        <Content Include="day07.txt"/>
+        <Content Include="day08.txt"/>
+        <Content Include="day09.txt"/>
+        <Content Include="day10.txt"/>
+        <Content Include="day11.txt"/>
+        <Content Include="day12.txt"/>
+        <Content Include="day13.txt"/>
+        <Content Include="day14.txt"/>
+        <Content Include="day15.txt"/>
+        <Content Include="day16.txt"/>
+        <Content Include="day17.txt"/>
+        <Content Include="day18.txt"/>
+        <Content Include="day19.txt"/>
+        <Content Include="day20.txt"/>
+        <Content Include="day21.txt"/>
+        <Content Include="day22.txt"/>
+        <Content Include="day23.txt"/>
+        <Content Include="day24.txt"/>
     </ItemGroup>
 
     <ItemGroup>
