@@ -111,6 +111,41 @@ type Point3D =
             Point3D(a.x - b.x, a.y - b.y, a.z - b.z)
     end
 
+
+module Grid =
+    let createGrid<'a> nRows nCols =
+        Array.zeroCreate<Array> nRows
+        |> Seq.map (fun _ -> Array.zeroCreate<'a> nCols)
+        |> Seq.toArray
+
+    let createGridDV<'a> nRows nCols (initValue: 'a) =
+        Array.zeroCreate<Array> nRows
+        |> Seq.map (fun _ -> Array.create<'a> nCols initValue)
+        |> Seq.toArray
+
+    let getNeighbours (point: Point2D) =
+        [ (-1, 0); (1, 0); (0, -1); (0, 1) ]
+        |> Seq.map (fun (x, y) -> Point2D(point.x + x, point.y + y))
+        |> Seq.toArray
+
+    let getNeighboursDiag (point: Point2D) =
+        [ (-1, 0); (1, 0); (0, -1); (0, 1); (1, 1); (-1, 1); (1, -1); (-1, -1) ]
+        |> Seq.map (fun (x, y) -> Point2D(point.x + x, point.y + y))
+        |> Seq.toArray
+
+
+module Math =
+    let inline gcd a b =
+        let rec gcd a b =
+            if a <> LanguagePrimitives.GenericZero then
+                gcd (b % a) a
+            else
+                b
+
+        gcd a b
+
+    let inline lcm a b = (a * b) / (gcd a b)
+
 type aocIO(year) =
     let year = year
     let httpClient = new HttpClient()
@@ -163,6 +198,8 @@ type aocIO(year) =
             let request = new HttpRequestMessage(HttpMethod.Get, url)
             request.Headers.Add("Cookie", $"session={sessionToken}")
             let cts = new CancellationTokenSource()
+
+            printfn $"Getting input from: %A{url}"
             let response = httpClient.Send request
 
             if (not response.IsSuccessStatusCode) then
@@ -211,41 +248,5 @@ type aocIO(year) =
             content
         else
             failwith "wtf"
-
-
-module Grid =
-    let createGrid<'a> nRows nCols =
-        Array.zeroCreate<Array> nRows
-        |> Seq.map (fun _ -> Array.zeroCreate<'a> nCols)
-        |> Seq.toArray
-
-    let createGridDV<'a> nRows nCols (initValue: 'a) =
-        Array.zeroCreate<Array> nRows
-        |> Seq.map (fun _ -> Array.create<'a> nCols initValue)
-        |> Seq.toArray
-
-    let getNeighbours (point: Point2D) =
-        [ (-1, 0); (1, 0); (0, -1); (0, 1) ]
-        |> Seq.map (fun (x, y) -> Point2D(point.x + x, point.y + y))
-        |> Seq.toArray
-
-    let getNeighboursDiag (point: Point2D) =
-        [ (-1, 0); (1, 0); (0, -1); (0, 1); (1, 1); (-1, 1); (1, -1); (-1, -1) ]
-        |> Seq.map (fun (x, y) -> Point2D(point.x + x, point.y + y))
-        |> Seq.toArray
-
-
-module Math =
-    let inline gcd a b =
-        let rec gcd a b =
-            if a <> LanguagePrimitives.GenericZero then
-                gcd (b % a) a
-            else
-                b
-
-        gcd a b
-
-    let inline lcm a b = (a * b) / (gcd a b)
-
 
 let aocIO = aocIO 2019

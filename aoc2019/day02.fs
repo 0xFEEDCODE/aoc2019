@@ -1,25 +1,57 @@
 module aoc2019.day02
-
 open Microsoft.FSharp.Collections
 open aoc2019.util
 
 let solve() =
-    let mutable inp = (aocIO.getInput() |> Seq.head).Split ',' |> Seq.map int |> Seq.toArray
+    let mutable input = (aocIO.getInput() |> Seq.head).Split ',' |> Seq.map int |> Seq.toArray
     
-    inp[1] <- 12;
-    inp[2] <- 2
+    let runProgram (program: int array) =
+        let mutable program = program |> Seq.toArray
+        program
+        |> Seq.chunkBySize 4
+        |> Seq.iter (fun seq ->
+            if seq.Length = 4 && seq[0] <> 99 then
+                program[seq[3]] <- (if seq[0] = 1 then program[seq[1]] + program[seq[2]] else program[seq[1]] * program[seq[2]])
+            else
+                ())
+        
+        let outp = program[0]
+        outp
     
-    inp
-    |> Seq.chunkBySize 4
-    |> Seq.iter (fun x ->
-        if x.Length = 4 && x[0] <> 99 then
-            inp[x[3]] <- (if x[0] = 1 then inp[x[1]] + inp[x[2]] else inp[x[1]] * inp[x[2]])
-        else
-            ())
+    let mutable program = input
+    program[1] <- 12
+    program[2] <- 2
+    let a1 = runProgram input
+    printfn $"%A{a1}"
     
-    printfn $"%A{inp}"
-    let ans1 = inp[0]
+    let target = 19690720
+    let noun_idx = 1
+    let verb_idx = 2
     
-    printfn $"%A{ans1}"
-    //helper.submitAnswer 1 ans1
+    let findHighestPossibleArgVal parameter_idx target =
+        let mutable argVal = 0
+        let mutable outp = 0
+        
+        outp <- runProgram program
+        while(outp < target) do
+            argVal <- argVal + 1
+            program[parameter_idx] <- argVal
+            outp <- runProgram program
+            
+        if (outp = target) then argVal else argVal-1
+    
+    let noun = findHighestPossibleArgVal noun_idx target
+    program[noun_idx] <- noun
+    
+    let verb = findHighestPossibleArgVal verb_idx target
+    program[verb_idx] <- verb
+    
+    let outp = runProgram program
+    printfn $"%A{outp}"
+    if (outp <> target) then
+        failwith "F"
+        
+    printfn $"%A{(noun, verb)}"
+    let a2 = (100 * noun + verb)
+    printfn $"%A{a2}"
     

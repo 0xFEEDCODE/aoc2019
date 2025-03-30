@@ -2,23 +2,27 @@
 module aoc2019.day01
 open util
 
-let calc x = (x/3) - 2
-let rec fn x acc =
-    if (x <= 0) then
-        acc
-    else
-        fn (calc x) (acc+x)
+let calcFuel1 mass = int (floor (double mass/3.)) - 2
+
+let rec calcFuel2 mass =
+    let rec loop unit total =
+        if unit <= 0 then
+            total
+        else
+            let new_fuel = calcFuel1 unit
+            let new_total = total + max 0 new_fuel
+            loop new_fuel new_total
+    loop mass 0
 
 let solve() =
-    let inp = aocIO.getInput(false) |> Seq.map int
+    let masses = aocIO.getInput(false) |> Seq.map int
     
-    let ans1 = inp |> Seq.sumBy(calc)
-    printfn $"%A{ans1}"
+    let a1 = masses |> Seq.map(calcFuel1) |> Seq.sum
+    printfn $"%A{a1}"
     
-    //helper.submitAnswer 1 ans1
-    let ans2 = inp |> Seq.sumBy(fun x -> (fn (int x) 0) - int x)
-        
-    printfn $"%A{ans2}"
-    //helper.submitAnswer 2 ans2
+    let a2 = masses |> Seq.map(calcFuel2) |> Seq.sum
+    printfn $"%A{a2}"
+    
+    
     0
 
