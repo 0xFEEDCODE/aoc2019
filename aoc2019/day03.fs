@@ -2,12 +2,17 @@ module aoc2019.day03
 
 open aoc2019.util
 
+type Point2D with
+    member this.LinearDistance (other: Point2D) =
+        (sqrt (((pown (this.x - other.x) 2) + (pown (this.y - other.y) 2)) |> float))
+
 type Vector =
     { Start: int; End: int }
     
     member this.Distance =
         this.End - this.Start
 
+type Dir = | L | U | R | D
 type Line =
     { P1: Point2D; P2: Point2D }
     
@@ -24,6 +29,15 @@ type Line =
     member this.IsHLine = this.P1.x <> this.P2.x
     member this.IsVLine = this.P1.y <> this.P2.y
     
+    member this.LineDirection =
+        if (this.IsVLine) then
+            if this.P2.y < this.P1.y then U else D
+        else 
+            if this.P2.x < this.P1.x then L else R
+            
+    member this.Length =
+        if this.IsVLine then this.YVector.Distance else this.XVector.Distance
+        
     member this.GetCrossedPoint(line: Line) =
         let intersect (v1 : Vector) (v2 : Vector) =
             let fstV, sndV =
@@ -39,6 +53,7 @@ type Line =
         let intersectY = intersect this.YVector line.YVector
         if(intersectX.IsSome && intersectY.IsSome && intersectX.Value.Distance <> 0 && intersectY.Value.Distance <> 0) then
             let x,y = if this.XVector.Distance = 0 && line.YVector.Distance = 0 then (this.MinX, line.MinY) else (line.MinX, this.MinY)
+            
             Some(Point2D(x,y))
         else
             None
@@ -55,7 +70,7 @@ let getRelativePosOfWire (origin: Point2D) (wire: string) =
     match direction with
     | 'R' | 'L' -> Point2D((origin.x, length) ||> calcFn, origin.y)
     | 'U' | 'D' -> Point2D(origin.x, (origin.y, length) ||> calcFn)
-    
+
 let solve() =
     let wires = aocIO.getInput() |> Seq.map(fun line -> line.Split ',' |> Seq.toArray) |> Seq.toArray
     let centralPort = Point2D(0,0)
@@ -70,11 +85,23 @@ let solve() =
                       |> Array.map Option.get
                       |> Array.distinct
                       
-    for cp in crossPoints do
-        printfn $"%A{cp}"
-        
-    let a1 = crossPoints |> Array.map(centralPort.GetManhattanDistance) |> Array.min
-    let a = crossPoints |> Array.map(fun p -> (p, centralPort.GetManhattanDistance(p))) |> Array.sortByDescending(snd)
-    for (p,s) in a do
-        printfn $"%A{(p,s)}"
-    0
+    let a1 = crossPoints |> Array.map(fun p -> (p, centralPort.GetManhattanDistance(p))) |> Array.minBy(snd) |> snd
+    printfn $"%A{a1}"
+    
+    let getNSteps (origin: Point2D) (dest: Point2D) (path: Line seq) =
+        let rec core (origin: Point2D) (path: Line seq) acc =
+            let line = path |> Seq.head
+            let isFound, nSteps = 
+                if (origin.x = dest.x && line.IsVLine && (if (line.LineDirection = U) then line.P2.y <= dest.y else line.P2.y >= dest.y)) ||
+                   (origin.y = dest.y && line.IsHLine && (if (line.LineDirection = L) then line.P2.x <= dest.x else line.P2.x >= dest.x))
+                 then
+                        true, acc + (line.P1.LinearDistance(dest) |> int)
+                else
+                    false, acc + line.Length
+            if isFound then nSteps else core line.P2 (path |> Seq.skip 1) nSteps
+        core origin path 0
+     
+    let firstCrossPoint = crossPoints |> Array.head
+    let a2 = lines |> Seq.sumBy(getNSteps centralPort firstCrossPoint)
+    
+    printfn $"%A{a2}"
