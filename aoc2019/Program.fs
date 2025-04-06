@@ -9,9 +9,10 @@ sw.Start()
 (*
 day01.solve()
 day02.solve()
+day03.solve()
 day12.solve()
 *)
-day03.solve()
+day04.solve()
 sw.Stop()
 
 
